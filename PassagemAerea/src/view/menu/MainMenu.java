@@ -1,8 +1,12 @@
-
 package view.menu;
 
-
+/**
+ * Essa classe MainMenu como menu principal acessa os submenus.
+ *
+ * @author mariana01
+ */
 public class MainMenu {
+
     public static final int OP_CLIENTES = 1;
     public static final int OP_AVIOES = 2;
     public static final int OP_VOOS = 3;
@@ -20,6 +24,4 @@ public class MainMenu {
                 + "0- Sair da Aplicação"
                 + "\n--------------------------------------");
     }
-    
 }
- 

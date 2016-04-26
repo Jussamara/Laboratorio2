@@ -1,13 +1,22 @@
-
 package vendapasssagemaerea;
+
+import java.text.ParseException;
 import view.MainUI;
 
+/**
+ *
+ * @author mariana01
+ */
 public class VendaPasssagemAerea {
 
-   
-   public static void main(String[] args) {
+    /**
+     * Inicia a classe static void main
+     *
+     * @param args
+     * @throws java.text.ParseException Executa a view mainUI que irá acessar
+     * MainMenu
+     */
+    public static void main(String[] args) throws ParseException {
         new MainUI().executar();
     }
-    
 }
- 

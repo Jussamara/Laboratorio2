@@ -1,55 +1,86 @@
-
 package Repositorio;
 
-
-
-    
+import java.util.ArrayList;
 import java.util.List;
 import model.Venda;
-import java.util.ArrayList;
 
+/**
+ * Essa classe contém os repositórios para Venda.
+ *
+ * @author mariana01
+ */
 public class RepositorioVenda {
+
     private List<Venda> listaPassagens;
-    
-    public RepositorioVenda(){
-        listaPassagens = new ArrayList<Venda>();
+
+    /**
+     * Inicia o repositório Venda com seus dados. listaPassagens e recebe
+     * ArrayList
+     */
+    public RepositorioVenda() {
+        listaPassagens = new ArrayList<>();
     }
-    
-    public boolean addVendaPassagem(Venda passagem){
+
+    /**
+     * Esse método adiciona Venda de Passagens na lista de Passagens.
+     *
+     * @author mariana01
+     */
+    public boolean addVendaPassagem(Venda passagem) {
         return (listaPassagens.add(passagem));
     }
-    
-    public List<Venda>getListaPassagens(){
+
+    /**
+     * Esse método mostra lista de Venda de passagens.
+     *
+     * @author mariana01
+     */
+    public List<Venda> getListaPassagens() {
         return listaPassagens;
     }
-    
-    public boolean passagemExiste(int codigo){
+
+    /**
+     * Esse método verifica se existe um codigo especifico na lista de
+     * Passagens.
+     *
+     * @author mariana01
+     */
+    public boolean passagemExiste(int codigo) {
         for (Venda listaPassagem : listaPassagens) {
-            if(listaPassagem.getCodigo()==codigo){
+            if (listaPassagem.getCodigo() == codigo) {
                 return true;
             }
         }
         return false;
     }
-    
-    public Venda buscaPassagem(int codigo){
+
+    /**
+     * Esse método busca um código na lista de Venda e retorna a lista de
+     * passagens.
+     *
+     * @@author mariana01
+     */
+    public Venda buscaPassagem(int codigo) {
         for (Venda listaPassagem : listaPassagens) {
-            if(listaPassagem.getCodigo()==codigo){
+            if (listaPassagem.getCodigo() == codigo) {
                 return listaPassagem;
-            }            
+            }
         }
         return null;
     }
-    
-    public Venda buscaPassagemPorCliente(String Rg){
+
+    /**
+     * Esse método busca um rg na lista de Venda e retorna a lista de passagens
+     * com cliente e rg.
+     *
+     * @@author mariana01
+     */
+    public Venda buscaPassagemPorCliente(String Rg) {
         for (Venda listaPassagem : listaPassagens) {
-            if(listaPassagem.getCliente().getRg().equalsIgnoreCase(Rg)){
+            if (listaPassagem.getCliente().getRg().equalsIgnoreCase(Rg)) {
                 return listaPassagem;
-            }            
+            }
         }
         return null;
     }
 }
-
-    
-

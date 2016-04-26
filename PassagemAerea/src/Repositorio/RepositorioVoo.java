@@ -1,17 +1,25 @@
-
 package Repositorio;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
-import model.Cliente;
 import model.Voo;
 
+/**
+ * Essa classe contém os repositórios para Voo.
+ *
+ * @author mariana01
+ */
 public class RepositorioVoo {
 
     private List<Voo> listaVoos;
- 
 
+    /**
+     * Esse método mostra lista de Voos.
+     *
+     * @author mariana01
+     */
     public List<Voo> getListaVoos() {
         return listaVoos;
     }
@@ -20,37 +28,45 @@ public class RepositorioVoo {
         this.listaVoos = listaVoos;
     }
 
-
+    /**
+     * Inicia o repositório Voo com seus dados. listaVoos e recebe ArrayList
+     */
     public RepositorioVoo() {
         listaVoos = new ArrayList<Voo>();
-        
-    }
-/*
-    public ArrayList<Voo> buscarvooCapacidade(int Capacidade){
-       ArrayList<Voo> VooComEssaCapacidade = new ArrayList<Voo>();
-       for(Voo V : getListaVoos()){
-           if(V.getQtdDisponivel()>=Capacidade){
-              VooComEssaCapacidade.add(V);
-           }
-       }
-       return VooComEssaCapacidade;
-   }
-   
-*/
-    public boolean addHorario(Voo horario) {
-        if(verExiste(horario.getHorario()))
-            return false;
-        return (listaVoos.add(horario));
-    }     
 
+    }
+
+    /**
+     * Esse método adiciona horario no Voo na lista de Voo.
+     *
+     * @author mariana01
+     */
+    public boolean addHorario(Voo horario) {
+        if (verExiste(horario.getHorario())) {
+            return false;
+        }
+        return (listaVoos.add(horario));
+    }
+
+    /**
+     * Esse método mostra lista de Voos por Horário.
+     *
+     * @author mariana01
+     */
     public List<Voo> getListaHorarios() {
         Collections.sort(listaVoos);
         return listaVoos;
     }
 
+    /**
+     * Esse método verifica se existe uma Data e Horário especifico na lista de
+     * Voo.
+     *
+     * @author mariana01
+     */
     public boolean verExiste(Date horario) {
-        if(!listaVoos.isEmpty()){
-        for (Voo hora : listaVoos) {
+        if (!listaVoos.isEmpty()) {
+            for (Voo hora : listaVoos) {
                 if (hora.getHorario().equals(horario)) {
                     return true;
                 }
@@ -58,24 +74,40 @@ public class RepositorioVoo {
         }
         return false;
     }
-     public Voo buscarVoo(int codigo){
-        for(Voo voo : listaVoos){
-            if(voo.getCodigo() == codigo){
+
+    /**
+     * Esse método busca um código na lista de Voo e retorna voo.
+     *
+     * @@author mariana01
+     */
+    public Voo buscarVoo(int codigo) {
+        for (Voo voo : listaVoos) {
+            if (voo.getCodigo() == codigo) {
                 return voo;
             }
         }
         return null;
     }
-       public boolean vooExiste(int codigo){
-        for(Voo voo : listaVoos){
-            if(voo.getCodigo() == codigo){
+
+    /**
+     * Esse método verifica se existe um código especifico na lista de Voo.
+     *
+     * @author mariana01
+     */
+    public boolean vooExiste(int codigo) {
+        for (Voo voo : listaVoos) {
+            if (voo.getCodigo() == codigo) {
                 return true;
             }
         }
         return false;
     }
-   
 
+    /**
+     * Esse método busca uma data e horário na lista de Voo e retorna a hora.
+     *
+     * @@author mariana01
+     */
     public Voo buscarHorarioVoo(Date horario) {
         for (Voo hora : listaVoos) {
             if (hora.getHorario().equals(horario)) {
@@ -84,10 +116,4 @@ public class RepositorioVoo {
         }
         return null;
     }
-
-   
 }
-
-  
- 
-
